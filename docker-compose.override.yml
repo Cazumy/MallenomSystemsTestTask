@@ -1,0 +1,25 @@
+services:
+    crud_webapi:
+        build:
+            context: .
+            dockerfile: ImagesApi/Dockerfile
+        ports:
+            - "8080:8080"
+        container_name: images_web_api
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - db
+    db:
+        image: postgres:latest
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: 1234
+            POSTGRES_DB: imagesdb
+        volumes:
+            - db_data:/var/lib/postgresql/data
+        container_name: db_postgresql_container
+volumes:
+    db_data:

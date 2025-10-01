@@ -53,6 +53,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Button
@@ -76,6 +77,12 @@
                 HorizontalAlignment="Stretch"
                 Command="{Binding DeleteImageCommand}"
                 Content="УДАЛИТЬ"
+                Cursor="Hand" />
+            <Button
+                Grid.Column="3"
+                HorizontalAlignment="Stretch"
+                Command="{Binding UpdateConnectionCommand}"
+                Content="ОБНОВИТЬ СОДЕРЖИМОЕ"
                 Cursor="Hand" />
         </Grid>
     </Grid>

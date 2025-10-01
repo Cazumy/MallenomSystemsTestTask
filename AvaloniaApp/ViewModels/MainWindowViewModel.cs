@@ -103,5 +103,10 @@ namespace AvaloniaApp.ViewModels
             Images.Remove(SelectedImage);
             SelectedImage = null;
         }
+        [RelayCommand]
+        private async Task UpdateConnection()
+        {
+            LoadImages();
+        }
     }
 }
