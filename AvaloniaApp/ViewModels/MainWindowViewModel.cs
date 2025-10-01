@@ -38,6 +38,7 @@ namespace AvaloniaApp.ViewModels
         private async void LoadImages()
         {
             var allImages = await _imageApiService.GetAllAsync();
+            Images.Clear();
             if (allImages != null)
             {
                 foreach (var img in allImages)
