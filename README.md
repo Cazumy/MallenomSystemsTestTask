@@ -1,0 +1,11 @@
+<img width="1126" height="700" alt="изображение" src="https://github.com/user-attachments/assets/607fc575-5930-4459-b135-2d693c5e0072" />
+
+Для запуска проекта необходимо:
+  1. В терминале перейти в директорию "ImagesApi".
+  2. Запустить докер контейнер командой "docker-compose up --build -d". При этом docker engine должен быть запущен.
+  3. Выбрать проект для запуска "AvaloniaApp" и запустить его.
+
+
+
+https://github.com/user-attachments/assets/40a5281b-3f2e-4476-9031-974ec2487870
+

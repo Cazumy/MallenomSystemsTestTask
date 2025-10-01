@@ -18,6 +18,9 @@ namespace AvaloniaApp.ViewModels
         [ObservableProperty]
         private ObservableCollection<ImageInfo> images = [];
 
+        /// <summary>
+        /// Выбранный элемент в таблице
+        /// </summary>
         [ObservableProperty]
         private ImageInfo? selectedImage;
         partial void OnSelectedImageChanged(ImageInfo? value)
@@ -25,7 +28,7 @@ namespace AvaloniaApp.ViewModels
             UpdateImageCommand.NotifyCanExecuteChanged();
             DeleteImageCommand.NotifyCanExecuteChanged();
         }
-        private bool CanUpdateOrDelete() => SelectedImage != null;
+        private bool CanUpdateOrDelete() => SelectedImage != null; // Кликабельные кнопки редиктирования и удаления только при выбранном элементе таблицы
 
         public MainWindowViewModel(ImageApiService apiService)
         {
@@ -86,6 +89,7 @@ namespace AvaloniaApp.ViewModels
                 SelectedImage.Format = Path.GetExtension(filePath).TrimStart('.');
                 SelectedImage.Data = await File.ReadAllBytesAsync(filePath);
                 await _imageApiService.UpdateAsync(SelectedImage);
+                SelectedImage = null;
             }
         }
 
