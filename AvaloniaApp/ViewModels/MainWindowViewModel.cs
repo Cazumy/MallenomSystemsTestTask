@@ -104,7 +104,7 @@ namespace AvaloniaApp.ViewModels
             SelectedImage = null;
         }
         [RelayCommand]
-        private async Task UpdateConnection()
+        private void UpdateConnection()
         {
             LoadImages();
         }

@@ -1,6 +1,0 @@
-services:
-  imagesapi:
-    image: ${DOCKER_REGISTRY-}imagesapi
-    build:
-      context: .
-      dockerfile: ImagesApi/Dockerfile

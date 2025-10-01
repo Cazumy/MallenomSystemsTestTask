@@ -7,6 +7,15 @@ namespace ImagesApi.DAL.Context
     {
         public DbSet<Image> Images { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql(
+                    "Host=localhost;Port=5432;Database=imagesdb;Username=postgres;Password=1234");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -4,8 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // Строка подключения берётся из файла appsetting.json
+builder.Services.AddDbContext<AppDbContext>();
 
 
 builder.Services.AddScoped<ImageRepository>(); // Регистрация репозитория
@@ -16,11 +15,12 @@ builder.Services.AddSwaggerGen();              // Сваггер для теста апи в браузе
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate(); // Миграции при запуске
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>(); db.Database.Migrate(); 
 }
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

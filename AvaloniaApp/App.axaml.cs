@@ -23,7 +23,7 @@ namespace AvaloniaApp
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 // Настройка API-сервиса. Порт локалхоста находится в файлах докера "ImagesApi" решения
-                var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:8080/") };
+                var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5083/") };
                 var imageApiService = new ImageApiService(httpClient);
 
                 DisableAvaloniaDataAnnotationValidation();

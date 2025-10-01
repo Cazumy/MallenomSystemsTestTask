@@ -3,7 +3,7 @@
     "Name": "Новый профиль",
     "Projects": [
       {
-        "Path": "docker-compose.dcproj",
+        "Path": "ImagesApi\\ImagesApi.csproj",
         "Action": "Start"
       },
       {
