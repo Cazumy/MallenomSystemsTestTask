@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace DesktopImagesController
+namespace AvaloniaApp
 {
     internal sealed class Program
     {

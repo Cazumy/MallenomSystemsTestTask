@@ -1,9 +1,9 @@
 <Application
-    x:Class="DesktopImagesController.App"
+    x:Class="AvaloniaApp.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DesktopImagesController"
-    xmlns:service="using:DesktopImagesController.Services"
+    xmlns:local="using:AvaloniaApp"
+    xmlns:service="using:AvaloniaApp.Services"
     RequestedThemeVariant="Light">
 
     <Application.DataTemplates>

@@ -4,7 +4,7 @@ using System;
 using System.Globalization;
 using System.IO;
 
-namespace DesktopImagesController.Services
+namespace AvaloniaApp.Services
 {
     /// <summary>
     /// Конвертер для преобразования массива байтов в Bitmap

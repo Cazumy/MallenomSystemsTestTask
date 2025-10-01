@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace DesktopImagesController.ViewModels
+namespace AvaloniaApp.ViewModels
 {
     public class ViewModelBase : ObservableObject
     {

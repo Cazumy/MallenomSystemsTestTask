@@ -1,11 +1,11 @@
-﻿using DesktopImagesController.Models;
+﻿using AvaloniaApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace DesktopImagesController.Services
+namespace AvaloniaApp.Services
 {
     public class ImageApiService(HttpClient http)
     {

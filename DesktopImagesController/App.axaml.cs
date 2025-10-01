@@ -2,14 +2,14 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using DesktopImagesController.Services;
-using DesktopImagesController.ViewModels;
-using DesktopImagesController.Views;
+using AvaloniaApp.Services;
+using AvaloniaApp.ViewModels;
+using AvaloniaApp.Views;
 using System;
 using System.Linq;
 using System.Net.Http;
 
-namespace DesktopImagesController
+namespace AvaloniaApp
 {
     public partial class App : Application
     {

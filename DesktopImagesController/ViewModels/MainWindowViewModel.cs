@@ -3,13 +3,13 @@
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using DesktopImagesController.Models;
-using DesktopImagesController.Services;
+using AvaloniaApp.Models;
+using AvaloniaApp.Services;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace DesktopImagesController.ViewModels
+namespace AvaloniaApp.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
@@ -25,6 +25,7 @@ namespace DesktopImagesController.ViewModels
             UpdateImageCommand.NotifyCanExecuteChanged();
             DeleteImageCommand.NotifyCanExecuteChanged();
         }
+        private bool CanUpdateOrDelete() => SelectedImage != null;
 
         public MainWindowViewModel(ImageApiService apiService)
         {
@@ -65,7 +66,7 @@ namespace DesktopImagesController.ViewModels
             }
         }
 
-        [RelayCommand(CanExecute = nameof(CanEditOrDelete))]
+        [RelayCommand(CanExecute = nameof(CanUpdateOrDelete))]
         private async Task UpdateImage(Window window)
         {
             if (SelectedImage == null)
@@ -88,7 +89,7 @@ namespace DesktopImagesController.ViewModels
             }
         }
 
-        [RelayCommand(CanExecute = nameof(CanEditOrDelete))]
+        [RelayCommand(CanExecute = nameof(CanUpdateOrDelete))]
         private async Task DeleteImage()
         {
             if (SelectedImage == null)
@@ -98,6 +99,5 @@ namespace DesktopImagesController.ViewModels
             Images.Remove(SelectedImage);
             SelectedImage = null;
         }
-        private bool CanEditOrDelete() => SelectedImage != null;
     }
 }

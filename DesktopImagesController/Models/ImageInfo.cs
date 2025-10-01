@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace DesktopImagesController.Models
+namespace AvaloniaApp.Models
 {
     public partial class ImageInfo : ObservableObject
     {
